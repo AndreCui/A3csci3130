@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
+/**
+ * this class shows all of the information details from the database and store the information
+ * after user edit it
+ * */
 public class DetailViewActivity extends Activity {
 
     private EditText nameField, businessnumberField, primarybusinessField, addressField, provinceField;
@@ -12,7 +15,7 @@ public class DetailViewActivity extends Activity {
     private MyApplicationData appState;
 
     @Override
-    //protected method
+  
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_view);
@@ -37,7 +40,10 @@ public class DetailViewActivity extends Activity {
 
         }
     }
-
+/**
+ * This method update the information after user edit it to database
+ *
+ * */
     public void updateContact(View v){
         //TODO: Update contact funcionality
         String uid= receivedPersonInfo.uid;
@@ -51,7 +57,9 @@ public class DetailViewActivity extends Activity {
         appState.firebaseReference.child(receivedPersonInfo.uid).setValue(person);
         finish();
     }
-
+/**
+ * This method delete the contact information
+ * */
     public void eraseContact(View v)
     {
         //TODO: Erase contact functionality

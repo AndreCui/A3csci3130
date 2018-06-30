@@ -13,7 +13,9 @@ public class CreateContactAcitivity extends Activity {
     private MyApplicationData appState;
 
     @Override
-    //protected method
+    /**protected method onCreate initialize all the fields
+     * @param savadInstanceState is the current state
+     * */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_contact_acitivity);
@@ -30,7 +32,7 @@ public class CreateContactAcitivity extends Activity {
 
 
     }
-
+/** this method store all the information*/
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String personID = appState.firebaseReference.push().getKey();
